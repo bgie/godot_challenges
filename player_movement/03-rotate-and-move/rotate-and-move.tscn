@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://wyr02e8ckaaw"]
+
+[ext_resource type="Texture2D" uid="uid://bv18cqlsvo2d4" path="res://assets/trippi_troppi_troppa_trippa.png" id="1_i4orh"]
+[ext_resource type="Script" uid="uid://bjfes1b6y6xxn" path="res://03-rotate-and-move/rotate-and-move.gd" id="2_i4orh"]
+
+[node name="Asteroids-movement" type="Node2D"]
+
+[node name="trippi_troppi_troppa_trippa" type="Sprite2D" parent="."]
+position = Vector2(631, 355)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_i4orh")
+script = ExtResource("2_i4orh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextLabel" type="Label" parent="CanvasLayer"]
+offset_left = 20.0
+offset_top = 20.0
+text = "Use <left>, <right> arrow keys to turn.
+Use <up> to fly forward.
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="CoordinatesLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 20.0
+offset_right = -20.0
+grow_horizontal = 0
+text = "X: ?
+Y: ?"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true

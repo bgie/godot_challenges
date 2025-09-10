@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7qd583ci8tob"]
+
+[ext_resource type="Texture2D" uid="uid://lddrjfhlm2bp" path="res://assets/Ballerina_Cappuccina.png" id="1_r5rss"]
+[ext_resource type="Script" uid="uid://8ibnj3aptm07" path="res://01-simple_left_right/simple_left_right_readable_code.gd" id="2_t4n1p"]
+
+[node name="simple_left_right" type="Node2D"]
+
+[node name="Ballerina_Cappuccina" type="Sprite2D" parent="."]
+position = Vector2(593, 370)
+texture = ExtResource("1_r5rss")
+script = ExtResource("2_t4n1p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextLabel" type="Label" parent="CanvasLayer"]
+offset_left = 20.0
+offset_top = 20.0
+text = "Use <left> and <right> arrow keys."
+metadata/_edit_use_anchors_ = true
+
+[node name="CoordinatesLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 20.0
+offset_right = -20.0
+grow_horizontal = 0
+text = "X: ?
+Y: ?"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true

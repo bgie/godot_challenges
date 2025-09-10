@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmjbukchw35tv"]
+
+[ext_resource type="Script" uid="uid://bk2xvgmcmn45c" path="res://05-collision-based-4-direction-movement/collision-based-4-direction-movement.gd" id="1_0grjn"]
+[ext_resource type="Texture2D" uid="uid://bkjd5tg82ca0n" path="res://assets/tung_tung_sahur.png" id="2_b33jo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4oge5"]
+radius = 30.0
+height = 190.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24t6n"]
+size = Vector2(104.5, 637.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8eacl"]
+size = Vector2(394.5, 59.75)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_044om"]
+distance = -334.0
+
+[node name="Collision-based-4-direction-movement" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(572, 325)
+script = ExtResource("1_0grjn")
+
+[node name="TungTungSahur" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_b33jo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(10, 1)
+shape = SubResource("CapsuleShape2D_4oge5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(169, 327.75)
+shape = SubResource("RectangleShape2D_24t6n")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(410, 168)
+shape = SubResource("RectangleShape2D_8eacl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(642, 302)
+shape = SubResource("WorldBoundaryShape2D_044om")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextLabel" type="Label" parent="CanvasLayer"]
+offset_left = 20.0
+offset_top = 20.0
+text = "Use <left>, <right>, <up> and <down> arrow keys."
+metadata/_edit_use_anchors_ = true
+
+[node name="CoordinatesLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 20.0
+offset_right = -20.0
+grow_horizontal = 0
+text = "X: ?
+Y: ?"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true

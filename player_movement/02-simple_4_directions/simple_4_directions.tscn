@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://c381v4er3767t"]
+
+[ext_resource type="Texture2D" uid="uid://cgq5rgg6ruewy" path="res://assets/Tralalero_Tralala.png" id="1_rmqsh"]
+[ext_resource type="Script" uid="uid://bsm7h5bl6ns7r" path="res://02-simple_4_directions/simple_4_directions.gd" id="2_k6xpt"]
+
+[node name="Simple4Directions" type="Node2D"]
+
+[node name="Tralalero_Tralala" type="Sprite2D" parent="."]
+position = Vector2(596, 335)
+texture = ExtResource("1_rmqsh")
+script = ExtResource("2_k6xpt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextLabel" type="Label" parent="CanvasLayer"]
+offset_left = 20.0
+offset_top = 20.0
+text = "Use <left>, <right>, <up> and <down> arrow keys."
+metadata/_edit_use_anchors_ = true
+
+[node name="CoordinatesLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 20.0
+offset_right = -20.0
+grow_horizontal = 0
+text = "X: ?
+Y: ?"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true

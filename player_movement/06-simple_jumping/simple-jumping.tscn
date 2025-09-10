@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://du544h03aaj4s"]
+
+[ext_resource type="Texture2D" uid="uid://c6ejcx2goqbmd" path="res://assets/Chimpanzini_Bananini.png" id="1_daekd"]
+[ext_resource type="Script" uid="uid://jgu74pxqg5f5" path="res://06-simple_jumping/simple_jumping.gd" id="2_schhg"]
+
+[node name="Simple-jumping" type="Node2D"]
+
+[node name="ChimpanziniBananini" type="Sprite2D" parent="."]
+position = Vector2(638, 389)
+texture = ExtResource("1_daekd")
+script = ExtResource("2_schhg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextLabel" type="Label" parent="CanvasLayer"]
+offset_left = 20.0
+offset_top = 20.0
+text = "Use <space>  key to jump."
+metadata/_edit_use_anchors_ = true
+
+[node name="CoordinatesLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 20.0
+offset_right = -20.0
+grow_horizontal = 0
+text = "X: ?
+Y: ?"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
